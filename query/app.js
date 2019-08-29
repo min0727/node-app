@@ -12,23 +12,25 @@ var other_html = fs.readFileSync('./other.ejs', 'utf8');
 var style_css = fs.readFileSync('./style.css', 'utf8');
 var server = http.createServer(
   (request, response) => {
-    const url_parts = url.parse(request.url, true)
+    const url_parts = url.parse(request.url, true);
     switch (url_parts.pathname) {
       case '/':
-        var data = "これはindexです";
+        var message = "これはindexです";
         var query = url_parts.query;
+        // msgというプロパティがあるわけではない
         if (query.msg != undefined) {
-          var query_obj = data + 'あなたは「' + query.msg + '」と送りました';
+        message += 'あなたは「' + query.msg + '」と送りました';
         }
         data = ejs.render(index_html, {
           title: 'Index',
-          content: 'sample',
+          content: message,
         });
         response.writeHead(200, {
-          'Content-Type': 'text/html'
+          'Content-Type': 'text/html;charset=utf-8'
         });
         response.write(data);
         response.end();
+        console.log(data);
         break;
 
       case '/other':
