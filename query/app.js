@@ -15,11 +15,20 @@ var server = http.createServer(
     const url_parts = url.parse(request.url, true)
     switch (url_parts.pathname) {
       case '/':
-        var data = "これはindexです"
+        var data = "これはindexです";
         var query = url_parts.query;
         if (query.msg != undefined) {
           var query_obj = data + 'あなたは「' + query.msg + '」と送りました';
         }
+        data = ejs.render(index_html, {
+          title: 'Index',
+          content: 'sample',
+        });
+        response.writeHead(200, {
+          'Content-Type': 'text/html'
+        });
+        response.write(data);
+        response.end();
         break;
 
       case '/other':
