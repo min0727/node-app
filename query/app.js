@@ -23,6 +23,7 @@ var server = http.createServer(
         }
         data = ejs.render(index_html, {
           title: 'Index',
+          // messageに引用符がついてないことに注意
           content: message,
         });
         response.writeHead(200, {
