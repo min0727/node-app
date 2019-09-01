@@ -19,7 +19,7 @@ var server = http.createServer(
         var query = url_parts.query;
         // msgというプロパティがあるわけではない
         if (query.msg != undefined) {
-        message += 'あなたは「' + query.msg + '」と送りました';
+          message += 'あなたは「' + query.msg + '」と送りました';
         }
         data = ejs.render(index_html, {
           title: 'Index',
