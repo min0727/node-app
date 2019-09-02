@@ -12,6 +12,7 @@ var index_html = fs.readFileSync("./index.ejs", "UTF-8");
 var other_html = fs.readFileSync("./other.ejs", "utf8");
 var style_css = fs.readFileSync("./style.css", "utf8");
 console.log("read");
+// /にアクセスすること
 const server = http.createServer((request, response) => {
   console.log('create');
   const url_parts = url.parse(request.url, true);
