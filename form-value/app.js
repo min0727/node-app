@@ -47,20 +47,28 @@ const server = http.createServer((request, response) => {
 server.listen(2000);
 console.log('start');
 
+var data = {
+  '太郎': '09-999-999',
+  '花子': '08-888-888',
+  '幸子': '07-777-777',
+  '一郎': '06-666-666'
+};
+
 function response_index (request, response) {
   const message = 'これはindexです';
-  console.log('pass');
-  const data = ejs.render(index_html, {
+  // console.log('pass');
+  const content = ejs.render(index_html, {
     title: 'Index',
     // messageに引用符がついてないことに注意
-    content: message
+    content: message,
+    data: data
   });
   response.writeHead(200, {
     'Content-Type': 'text/html;charset=utf-8'
   });
-  response.write(data);
+  response.write(content);
   response.end();
-  console.log(data);
+  // console.log(data);
 }
 
 function response_other (request, response) {
@@ -69,7 +77,7 @@ function response_other (request, response) {
     // 自作のプロパティ
     var body = '';
     // データ受信時の処理
-    request.on('data', data => {
+    request.on('data', (data) => {
       body += data;
     });
     request.on('end', () => {
