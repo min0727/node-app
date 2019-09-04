@@ -16,17 +16,27 @@
 </head>
 
 <body>
-    <div role="main">
-        <h1><%= title %></h1>
-        <p><%= content %></p>
-        <form method="POST" action="/other">
-            <p>
-                <input type="text" name="msg">
-                <input type="submit" value="click">
-            </p>
-        </form>
+<div role="main">
+    <h1><%= title %></h1>
+    <p><%= content %></p>
+    <!--        <form method="POST" action="/other">-->
+    <!--            <p>-->
+    <!--                <input type="text" name="msg">-->
+    <!--                <input type="submit" value="click">-->
+    <!--            </p>-->
+    <!--        </form>-->
+    <p>
+    <table>
+        <% for (var key in data) { %>
+            <tr>
+                <th><%= key %></th>
+                <td><%= data[key] %></td>
+            </tr>
+        <% } %>
 
-    </div>
+    </table>
+    </p>
+</div>
 </body>
 
 </html>
