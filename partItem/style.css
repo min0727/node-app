@@ -1,0 +1,50 @@
+/******************************************
+*  Author : Author   
+*  Created On : Sat Aug 24 2019
+*  File : style.css
+*******************************************/
+table {
+    margin: 20px;
+    font-size: 16pt;
+}
+
+table tr th {
+    background-color: #999;
+    color: #fff;
+    text-align: center;
+    padding: 3px 10px;
+}
+
+table tr td {
+    background-color: #eee;
+    color: #666;
+    text-align: left;
+    padding: 3px 10px;
+}
+
+form {
+    font-size: 14pt;
+}
+
+h1 {
+    font-size: 60pt;
+    color: #eee;
+    text-align: right;
+    margin: 0px;
+}
+
+body {
+    font-size: 12pt;
+    color: #999;
+    margin: 5px;
+}
+
+p {
+    font-size: 14pt;
+    margin: 0px 20px;
+}
+
+/*値を1つ指定した場合：	指定した値が[上下左右]のマージンになります。
+値を2つ指定した場合：	記述した順に[上下][左右]のマージンになります。
+値を3つ指定した場合：	記述した順に[上][左右][下]のマージンになります。
+値を4つ指定した場合：	記述した順に[上][右][下][左]のマージンになります。*/
