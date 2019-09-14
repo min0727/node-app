@@ -13,12 +13,23 @@
           charset="UTF-8" content="text/html" http-equiv="content-type">
 
     <title><%= title %></title>
-    <link type="text/css" href="./style.css" rel="stylesheet">
+    <!--    CDNは補完できない-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
 </head>
 <body>
-<div role="main">
-    <h1><%= title %></h1>
-    <p><%= content %></p>
+<div role="container">
+    <p>
+    <table class="table table-bordered">
+        <% for (var key in data) { %>
+            <%- include('data-item', {key:key, val:[data[key]]}) %>
+        <% } %>
+
+    </table>
+    </p>
+    <!--    <h1><%= title %></h1>-->
+    <!--    <p><%= content %></p>-->
 </div>
 </body>
 
