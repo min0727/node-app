@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+<head>
+    <meta :charset="UTF-8" content="text/html" http-equiv="content-type">
+
+    <title><%= title %></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+<div class="container mt-5">
+    <p><%= content %></p>
+    <table class="table table-striped" style="width: 400px;">
+        <tr>
+            <th>伝言です</th>
+        </tr>
+        <tr>
+            <td><%= data.msg %></td>
+        </tr>
+    </table>
+    <form method="POST" action="/">
+        <div class="form-group">
+            <label for="msg">メッセージ</label>
+            <input type="text" name="msg" id="msg" class="form-control"
+                   placeholder="メッセージを入力してください。">
+        </div>
+        <button type="submit" class="btn btn-lg btn-primary">送信</button>
+    </form>
+
+</div>
+</body>
+
+</html>
