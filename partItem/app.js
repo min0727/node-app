@@ -64,6 +64,7 @@ function responseIndex (request, response) {
     // messageに引用符がついてないことに注意
     content: MESSAGE,
     data: DATA,
+    // expressではfilenameは不要
     filename: 'data-item'
   });
   response.writeHead(200, {
